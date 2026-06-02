@@ -2,6 +2,7 @@ package com.example.clase01_06_26
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
         openFileInput("datos_usuario.txt").bufferedReader().use { reader ->
             val text = reader.readText()
+        }
+
+        val arrayArchivos: Array<String> = fileList()
+        arrayArchivos.forEach { name ->
+            Log.i("Stored", name)
         }
     }
 }
